@@ -6,6 +6,7 @@ package com.example.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
 
@@ -23,6 +24,13 @@ import com.example.model.BeerExpert;
  */
 public class BeerSelect extends HttpServlet {
 
+	
+	
+	public BeerSelect() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -35,13 +43,17 @@ public class BeerSelect extends HttpServlet {
 			throws IOException, ServletException {
 		String c = request.getParameter("color");
 		BeerExpert be = new BeerExpert();
+		
 		List<String> result = be.getBrands(c);
 //		response.setContentType("text/html");
 //		PrintWriter out = response.getWriter();
 //		out.println("Beer Selection Advice<br>");
 		request.setAttribute("styles", result);
+		request.setAttribute("serverInfo", request.getServletContext().getServerInfo());
+		request.setAttribute("realPath", request.getServletContext().getRealPath("css/BeerAdvisor.css"));
+		request.setAttribute("headerNamesEnum", request.getHeaderNames());
 		
-		RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/BeerForm/result.jsp");
 		
 		view.forward(request, response);
 		
