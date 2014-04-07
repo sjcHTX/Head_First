@@ -1,13 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Head First Chap 3</title>
+		<link href="css/BeerAdvisor.css">
 	</head>
 	<body>
 
-	<table></table>
+	<table>
+		<tr>
+			<th>Page</th>
+			<th>URL</th>
+		</tr>
+		<tr>
+			<td>Beer Form</td>
+			<td><a href="BeerForm/form.html">Beer Form</a></td>
+		</tr>	
+	</table>
+	
 </body>
 </html>
