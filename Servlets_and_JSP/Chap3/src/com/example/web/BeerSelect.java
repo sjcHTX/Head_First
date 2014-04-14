@@ -48,6 +48,7 @@ public class BeerSelect extends HttpServlet {
 //		response.setContentType("text/html");
 //		PrintWriter out = response.getWriter();
 //		out.println("Beer Selection Advice<br>");
+		request.setAttribute("corpEmail", getServletContext().getInitParameter("corp-email"));
 		request.setAttribute("styles", result);
 		request.setAttribute("serverInfo", request.getServletContext().getServerInfo());
 		request.setAttribute("realPath", request.getServletContext().getRealPath("css/BeerAdvisor.css"));
@@ -58,9 +59,4 @@ public class BeerSelect extends HttpServlet {
 		view.forward(request, response);
 		
 	}
-	
-	
-	
-	
-
 }

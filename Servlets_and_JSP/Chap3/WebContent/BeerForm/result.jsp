@@ -1,3 +1,4 @@
+<%@page import="com.example.Dog"%>
 <%@ page import="java.util.*" %>
 <html>
 	<head>
@@ -29,9 +30,15 @@
 				out.print("<br>attr Name: " + attrNames.nextElement());
 			}
 						
+			out.print("<br>corp email: " + (String)request.getAttribute("corpEmail"));
+			Dog dog = (Dog) getServletContext().getAttribute("dog");
+			out.println("<br>Dog's breed is: " + dog.getBreed());
+			
+			out.print("<br>Session Count: " + (Integer)request.getAttribute("sessionCount"));
+			
 			
 		%>
-		<br>
+		<br>		
 		<a href="javascript:window.history.back()">	Previous page</a>
 	</body>
 </html>

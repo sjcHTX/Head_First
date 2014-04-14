@@ -20,5 +20,10 @@
 		</tr>	
 	</table>
 	
+	<%
+		out.print("<br>Session Count: " + (Integer) request.getServletContext().getAttribute("sessionCount"));
+	%>
+	
+	
 </body>
 </html>
